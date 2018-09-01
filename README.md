@@ -43,18 +43,18 @@ You are now all set to start using the bot.
 4. Send the available commands to botfather to enable auto-complete in the bot. Send `/setcommands` to botfather and select your created bot. Paste the commands in the box below (one message with multiple lines).
 
 
-		/status - Display current print status.
-		/upload - Upload gcode file.
-		/files - Browse gcode files.
-		/print - Alias for files.
-		/macros - Browse macros.
-		/togglepause - Pause/resume print.
-		/cancel - Cancel paused print.
-		/gcode - Send gcode to printer.
-		/emergencystop - A confirmation is required.
-		/shutup - Disables all automatic notifications.
-		/dontshutup - Enables all automatic notifications.
-		/help - Show this help message.
+		status - Display current print status.
+		upload - Upload gcode file.
+		files - Browse gcode files.
+		print - Alias for files.
+		macros - Browse macros.
+		togglepause - Pause/resume print.
+		cancel - Cancel paused print.
+		gcode - Send gcode to printer.
+		emergencystop - A confirmation is required.
+		shutup - Disables all automatic notifications.
+		dontshutup - Enables all automatic notifications.
+		help - Show this help message.
 
 
 ## Changing notification settings
