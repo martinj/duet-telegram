@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "description": "Telegram bot to control duet wifi controller",
   "main": "index.js",
-  "bin" : {
+  "bin": {
     "duetbot": "./index.js"
   },
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "release": "npm run test && release-it -n -i patch",
+    "release:minor": "npm run test && release-it -n -i minor",
+    "release:major": "npm run test && release-it -n -i major"
   },
   "keywords": [
     "duet",
@@ -30,6 +33,7 @@
   },
   "devDependencies": {
     "@aptoma/eslint-config": "^7.0.1",
-    "eslint": "^5.5.0"
+    "eslint": "^5.5.0",
+    "release-it": "^7.6.0"
   }
 }
