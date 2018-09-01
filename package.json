@@ -1,0 +1,35 @@
+{
+  "name": "duet-telegram",
+  "version": "0.1.0",
+  "description": "Telegram bot to control duet wifi controller",
+  "main": "index.js",
+  "bin" : {
+    "duetbot": "./index.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "eslint ."
+  },
+  "keywords": [
+    "duet",
+    "3d-printer",
+    "telegram",
+    "bot"
+  ],
+  "author": "Martin Jonsson <martin.jonsson@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dot-prop": "^4.2.0",
+    "inquirer": "^6.2.0",
+    "meow": "^5.0.0",
+    "moment": "^2.22.2",
+    "request-prom": "^3.1.0",
+    "telegraf": "^3.22.2"
+  },
+  "devDependencies": {
+    "@aptoma/eslint-config": "^7.0.1",
+    "eslint": "^5.5.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "@aptoma/eslint-config",
+  "parserOptions": {
+    "ecmaVersion": "2017"
+  },
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "rules": {
+  	"new-cap": "off"
+  }
+}

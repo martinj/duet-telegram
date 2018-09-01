@@ -1,0 +1,25 @@
+{
+	"authorizedUsers": ["ENTER YOUR TELEGRAM USER ID HERE"],
+	"url": "http://URL-OR-IP-TO-YOUR-DUET",
+	"token": "ENTER TELEGRAM BOT TOKEN",
+	"webcamSnapshotUrl": "URL TO YOUR WEBCAM (REMOVE THIS LINE IF YOU DONT HAVE ANY",
+	"uploadDir": "telegram",
+	"pollInterval": 5000,
+	"notificationDefaults": {
+		"console": true,
+		"printMinutes": 0,
+		"printStarted": true,
+		"printFinished": true,
+		"flashing": false,
+		"off": true,
+		"halted": true,
+		"pausing": true,
+		"paused": true,
+		"resuming": true,
+		"simulating": true,
+		"busy": false,
+		"changingTool": true,
+		"idle": false,
+		"printing": false
+	}
+}
