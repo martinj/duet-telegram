@@ -32,7 +32,7 @@ async function start() {
 		console.log(`Uploads disabled: ${err.message}`);
 	}
 
-	const baseCtx = context.create(bot.context, {telegram: bot.telegram});
+	const baseCtx = context.create(bot.context, {telegram: bot.telegram, session: {}});
 
 	bot.startPolling();
 	console.log('Bot started...');
