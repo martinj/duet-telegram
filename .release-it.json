@@ -1,5 +1,6 @@
 {
   "requireCleanWorkingDir": false,
+  "requireUpstream": false,
   "npm": {
     "publish": false
   }
