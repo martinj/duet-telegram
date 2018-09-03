@@ -1,4 +1,5 @@
 {
+  "requireCleanWorkingDir": false,
   "npm": {
     "publish": false
   }
