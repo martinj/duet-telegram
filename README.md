@@ -77,7 +77,6 @@ There is plans on adding configuration support through the bot for this. See [TO
 - Printer offline behaviour
 - Respond to unknown commands with help
 - Respect sessionTimeout from rr_connect
-- Request retry logic
 - Test pause / resume with print interval notifications
 
 ## Limitations

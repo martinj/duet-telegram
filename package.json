@@ -25,6 +25,7 @@
   "author": "Martin Jonsson <martin.jonsson@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "attempt-promise": "^2.0.1",
     "debug": "^3.1.0",
     "dot-prop": "^4.2.0",
     "inquirer": "^6.2.0",
