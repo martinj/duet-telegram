@@ -29,9 +29,11 @@
     "debug": "^3.1.0",
     "dot-prop": "^4.2.0",
     "inquirer": "^6.2.0",
+    "latest-version": "^4.0.0",
     "meow": "^5.0.0",
     "moment": "^2.22.2",
     "request-prom": "^3.1.0",
+    "semver": "^5.5.1",
     "telegraf": "^3.22.2"
   },
   "devDependencies": {

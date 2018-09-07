@@ -5,7 +5,9 @@
 	"webcamSnapshotUrl": "URL TO YOUR WEBCAM (REMOVE THIS LINE IF YOU DONT HAVE ANY",
 	"uploadDir": "telegram",
 	"pollInterval": 5000,
+	"checkForUpdates": true,
 	"notificationDefaults": {
+		"updateAvailable": true,
 		"console": true,
 		"printMinutes": 0,
 		"printStarted": true,
