@@ -6,10 +6,10 @@ This bot is inspired by [Octoprint-Telegram](https://github.com/fabianonline/Oct
 
 # Installation
 
-1. Install [NodeJS](http://nodejs.org)
+1. Install [NodeJS](http://nodejs.org) - [Raspberry PI instructions](#install-nodejs-on-raspberry)
 2. Install `duet-telegram`
 
-		npm i -g duet-telegram
+		sudo npm i -g duet-telegram
 
 3. [Create Telegram Bot](#create-telegram-bot)
 
@@ -31,6 +31,11 @@ Issue `/start` command once again in your bot conversation. If everything worked
 
 You are now all set to start using the bot.
 
+### Install NodeJS on Raspberry
+
+	sudo apt-get install curl
+	curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+	sudo apt-get install -y nodejs
 
 ### Create Telegram Bot
 
