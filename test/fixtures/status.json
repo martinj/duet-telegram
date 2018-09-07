@@ -1,0 +1,20 @@
+{
+	"status": "P",
+	"currentLayer": 2,
+	"printDuration": 1000,
+	"fractionPrinted": 10,
+	"currentTool": 0,
+	"timesLeft": {
+		"filament": 50
+	},
+	"temps": {
+		"current": [210],
+		"tools": {
+			"active": [210]
+		},
+		"bed": {
+			"current": 60,
+			"active": 60
+		}
+	}
+}

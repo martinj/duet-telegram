@@ -10,7 +10,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "eslint .",
+    "lint": "eslint .",
+    "test": "NODE_ENV=test npm run lint && nyc --reporter=text-summary --reporter=lcov mocha --timeout 3000 'test/**/*.test.js'",
     "release": "npm run test && release-it -n -i patch",
     "release:minor": "npm run test && release-it -n -i minor",
     "release:major": "npm run test && release-it -n -i major"
@@ -24,6 +25,7 @@
   "author": "Martin Jonsson <martin.jonsson@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "debug": "^3.1.0",
     "dot-prop": "^4.2.0",
     "inquirer": "^6.2.0",
     "meow": "^5.0.0",
@@ -33,7 +35,10 @@
   },
   "devDependencies": {
     "@aptoma/eslint-config": "^7.0.1",
+    "chai": "^4.1.2",
     "eslint": "^5.5.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
     "release-it": "^7.6.0"
   }
 }
