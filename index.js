@@ -18,7 +18,11 @@ async function start() {
 	const bot = require('./lib/bot')(config, duet);
 
 	console.log('Connecting to duet...');
-	await duet.connect();
+	try {
+		await duet.connect();
+	} catch (err) {
+		console.log('Duet is offline!');
+	}
 
 	bot.catch(console.error);
 	bot.context.db = db.init(flags.database, config.notificationDefaults);
