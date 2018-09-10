@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
+const fs = require('fs');
 const {verifyUploadDir} = require('./lib/utils');
 const db = require('./lib/db');
 const notifications = require('./lib/notifications');
@@ -27,6 +28,8 @@ async function start() {
 
 	bot.catch(console.error);
 	bot.context.db = db.init(flags.database, config.notificationDefaults);
+
+	migrateDefaults(bot.context.db, config, flags.config);
 
 	console.log('Checking for upload dir...');
 
@@ -70,6 +73,17 @@ function startPoller(poller, config, baseCtx) {
 	});
 
 	poller.start(config.pollInterval);
+}
+
+function migrateDefaults(db, config, configPath) {
+	const chats = db.get('chats');
+	Object.keys(chats).forEach((id) => {
+		const current = db.get(`chats.${id}.notifications`);
+		db.set(`chats.${id}.notifications`, Object.assign({}, notifications.defaults, current));
+	});
+
+	config.notificationDefaults = Object.assign({}, notifications.defaults, config.notificationDefaults);
+	fs.writeFileSync(configPath, JSON.stringify(config, null, 2)); // eslint-disable-line no-sync
 }
 
 start().catch(console.error);
