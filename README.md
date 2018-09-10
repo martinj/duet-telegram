@@ -54,6 +54,7 @@ You are now all set to start using the bot.
 		print - Alias for files.
 		macros - Browse macros.
 		togglepause - Pause/resume print.
+		notifications - Show/Change your notification settings.
 		cancel - Cancel paused print.
 		gcode - Send gcode to printer.
 		emergencystop - A confirmation is required.
@@ -71,11 +72,10 @@ There is plans on adding configuration support through the bot for this. See [TO
 ## TODO
 
 - Add support for password protected duet
-- Support notification changes using the bot
 - Support paginated file listing responses
-- Printer offline behaviour
 - Respect sessionTimeout from rr_connect
 - Test pause / resume with print interval notifications
+- use telgram.sendChatAction for commands that takes time to process
 
 ## Limitations
 
