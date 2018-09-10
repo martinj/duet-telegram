@@ -1,3 +1,7 @@
+# 0.2.1
+
+* [[020f6a0](../../commit/020f6a0)] Fixed bug with setup for first time users.
+
 # 0.2.0
 
 * [[5743b52](../../commit/5743b52)] migrate notification defaults on startup
