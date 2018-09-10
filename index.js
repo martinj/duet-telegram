@@ -6,6 +6,7 @@ const db = require('./lib/db');
 const notifications = require('./lib/notifications');
 const context = require('./lib/context');
 const DuetApi = require('./lib/api');
+const OfflineError = DuetApi.OfflineError;
 const Poller = require('./lib/poller');
 const cli = require('./lib/cli');
 const pkg = require('./package.json');
@@ -60,7 +61,13 @@ function startPoller(poller, config, baseCtx) {
 	poller.on('printStarted', (...args) => notifications.printStarted(baseCtx, ...args));
 	poller.on('printFinished', (...args) => notifications.printFinished(baseCtx, ...args));
 	poller.on('console', (...args) => notifications.console(baseCtx, ...args));
-	poller.on('error', (err) => console.log('Status poll failed', err));
+	poller.on('error', (err) => {
+		if (err instanceof OfflineError) {
+			return;
+		}
+
+		console.log('Status poll failed', err);
+	});
 
 	poller.start(config.pollInterval);
 }
