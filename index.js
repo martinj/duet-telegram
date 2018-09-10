@@ -8,6 +8,8 @@ const context = require('./lib/context');
 const DuetApi = require('./lib/api');
 const Poller = require('./lib/poller');
 const cli = require('./lib/cli');
+const pkg = require('./package.json');
+const updateNotifier = require('./lib/update-notifier')(pkg);
 
 async function start() {
 	const {config, flags} = await cli();
@@ -16,7 +18,11 @@ async function start() {
 	const bot = require('./lib/bot')(config, duet);
 
 	console.log('Connecting to duet...');
-	await duet.connect();
+	try {
+		await duet.connect();
+	} catch (err) {
+		console.log('Duet is offline!');
+	}
 
 	bot.catch(console.error);
 	bot.context.db = db.init(flags.database, config.notificationDefaults);
@@ -37,6 +43,18 @@ async function start() {
 	bot.startPolling();
 	console.log('Bot started...');
 
+	startPoller(poller, config, baseCtx);
+
+	if (config.checkForUpdates) {
+		updateNotifier(async (version, stop) => {
+			await notifications.updateAvailable(baseCtx, version);
+			console.log(`New version (${version}) available`);
+			stop();
+		});
+	}
+}
+
+function startPoller(poller, config, baseCtx) {
 	poller.on('statusEvent', (...args) => notifications.send(baseCtx, ...args));
 	poller.on('printTime', (...args) => notifications.printTime(baseCtx, ...args));
 	poller.on('printStarted', (...args) => notifications.printStarted(baseCtx, ...args));
@@ -46,6 +64,5 @@ async function start() {
 
 	poller.start(config.pollInterval);
 }
-
 
 start().catch(console.error);

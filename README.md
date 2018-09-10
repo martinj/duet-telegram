@@ -73,11 +73,8 @@ There is plans on adding configuration support through the bot for this. See [TO
 - Add support for password protected duet
 - Support notification changes using the bot
 - Support paginated file listing responses
-- Add small cache on file listings to improve speed
 - Printer offline behaviour
-- Respond to unknown commands with help
 - Respect sessionTimeout from rr_connect
-- Request retry logic
 - Test pause / resume with print interval notifications
 
 ## Limitations
