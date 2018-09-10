@@ -27,8 +27,6 @@ If you didn't know your telegram user id, this will now be logged in the console
 
 Stop the bot and add your telegram user id in the confiuration file `authorizedUsers` and restart the bot.
 
-Issue `/start` command once again in your bot conversation. If everything worked you should see an output in the console with `New chat added`.
-
 You are now all set to start using the bot.
 
 ### Install NodeJS on Raspberry
