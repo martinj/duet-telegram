@@ -1,3 +1,7 @@
+# 0.3.0
+
+* [[dabce7e](../../commit/dabce7e)] Show webcam image on status if duet is unreachable
+
 # 0.2.1
 
 * [[020f6a0](../../commit/020f6a0)] Fixed bug with setup for first time users.
